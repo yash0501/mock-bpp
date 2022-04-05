@@ -10,7 +10,7 @@ var cors_1 = __importDefault(require("cors"));
 var config_1 = __importDefault(require("./config/config"));
 var logger_1 = __importDefault(require("./logger"));
 var app = express_1.default();
-var PORT = config_1.default.get("port");
+var PORT = process.env.PORT || config_1.default.port;
 app.use(express_1.default.json());
 app.use(cors_1.default());
 app.get("/", (req, res) => {
